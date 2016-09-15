@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :comments
 
   resources :users do
-    resources :friends
+    resources :relationships
     get "add_game_to_user_new"
     post "add_game_to_user_create"
   end
