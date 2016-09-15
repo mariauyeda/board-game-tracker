@@ -30,7 +30,11 @@ class GamesController < ApplicationController
 
   # def delete
   # end
-  def add_game_to_user
+  def add_game_to_user_new
+    # Need to pass games id to this
+  end
+
+  def add_game_to_user_create
     # Need to pass games id to this
   end
 
