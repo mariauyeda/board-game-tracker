@@ -1,10 +1,13 @@
-all of your libraries age
+<h1> <%= @user.username %>'s Friends </h1>
+
 <div>
-  <!-- libraries container -->
+  <!-- relationships container -->
   <div>
-    <!-- list container -->
-    <div>
-      <!-- each library goes here -->
-    </div>
+    <ul>
+    	<% @friends.each do |friend| %>
+    	<% friend_user = User.find(friend.id) %>
+    	<li> <%= link_to friend_user.username, user_path(friend_user) %> </li>
+    	<% end %>
+    </ul>
   </div>
 </div>

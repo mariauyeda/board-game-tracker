@@ -1,11 +1,12 @@
-user show pages
+<h1> <%= @user.username %> </h1>
 <div>
   <!-- user games list container -->
   <div>
-    <!-- list container -->
-    <div>
-      <!-- each list item goes here -->
-    </div>
+    <ul>
+      <% @user.games.each do |game| %>
+        <li> <%= link_to game.name, game_path(game) %> </li>
+      <% end %>
+    </ul>
   </div>
   <div>
     <!-- add here -->
@@ -13,7 +14,9 @@ user show pages
   <div>
     <!-- delete game here -->
   </div>
+  <% if user_signed_in? && @user == current_user %>
   <div>
-    <!-- friend div button -->
+    <%= link_to "Friends", user_relationships_path(@user) %>
   </div>
+  <% end %>
 </div>
