@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.2'
 
 # user auth
 gem 'devise'
+# act as votable
+gem 'acts_as_votable', '~> 0.10.0'
+# css animation
+gem "animate-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
