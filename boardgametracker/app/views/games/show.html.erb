@@ -1,4 +1,4 @@
-game show is here
+<h1> <%= @game.name %> </h1>
 
 <div>
   <!-- top content container -->
@@ -12,7 +12,7 @@ game show is here
     <!-- description container -->
     <div>
       <div>
-        <p>descriptions</p>
+        <p> <%= @game.description %> </p>
       </div>
     </div>
   </div>
@@ -23,7 +23,13 @@ game show is here
   <div>
     <!-- container for comments -->
     <div>
-      <!-- loop over comments here -->
+      <h5>Comments</h5>
+      <ul>
+        <% @game.comments.each do |comment| %>
+          <% comment_user = User.find(comment.user_id) %>
+          <li> <%= comment.content %> ~ <%= link_to comment_user.username, user_path(comment_user) %> </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

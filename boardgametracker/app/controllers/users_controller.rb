@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    #TODO need to route to users/:id
+    @user = User.find(params[:id])
   end
 end
