@@ -36,16 +36,9 @@ ActiveRecord::Schema.define(version: 20160915005023) do
   create_table "comments", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
+    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
-  end
-
-  create_table "friends", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_friends_on_user_id", using: :btree
   end
 
   create_table "games", force: :cascade do |t|
@@ -60,8 +53,6 @@ ActiveRecord::Schema.define(version: 20160915005023) do
     t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_gametags_on_game_id", using: :btree
-    t.index ["tag_id"], name: "index_gametags_on_tag_id", using: :btree
   end
 
   create_table "libraries", force: :cascade do |t|
@@ -69,8 +60,13 @@ ActiveRecord::Schema.define(version: 20160915005023) do
     t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_libraries_on_game_id", using: :btree
-    t.index ["user_id"], name: "index_libraries_on_user_id", using: :btree
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
@@ -93,15 +89,8 @@ ActiveRecord::Schema.define(version: 20160915005023) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "friend_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["friend_id"], name: "index_users_on_friend_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "friends", "users"
-  add_foreign_key "gametags", "games"
-  add_foreign_key "gametags", "tags"
-  add_foreign_key "libraries", "games"
-  add_foreign_key "libraries", "users"
 end

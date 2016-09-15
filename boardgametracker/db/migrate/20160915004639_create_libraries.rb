@@ -1,8 +1,8 @@
 class CreateLibraries < ActiveRecord::Migration[5.0]
   def change
     create_table :libraries do |t|
-      t.references :user, foreign_key: true
-      t.references :game, foreign_key: true
+      t.integer :user_id
+      t.integer :game_id
       t.timestamps
     end
   end
