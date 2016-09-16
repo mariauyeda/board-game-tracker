@@ -6,11 +6,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma" rel="stylesheet">
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <div class="navigation">
     <%= link_to "Home", games_path %>
     <% if user_signed_in? %>
       <%= link_to "Profile", user_path(current_user) %>
@@ -19,6 +18,13 @@
       <%= link_to "Register", new_user_registration_path %>
       <%= link_to "Login", new_user_session_path %>
     <% end %>
-    <%= yield %>
+    <div class="logo">
+      <a href="/"><%= image_tag("logo.png") %></a>
+    </div>
+  </div>
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+      <%= yield %>
   </body>
 </html>
