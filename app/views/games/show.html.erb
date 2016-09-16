@@ -1,60 +1,40 @@
-<h1> <%= @game.name %> </h1>
+<div class="show_container">
+  <h1><%=@game.name%></h1>
+  <div class="container">
+    <div class="image_icon">
+      <%= image_tag @game.thumbnail %>
+    </div>
+    <div class="comment_container">
+      <h1>Comments</h1>
+      <div class="add_comment_container">
+        <%= form_for @comment do |f| %>
+          <%= f.label :content %>
+          <%= f.text_area :content %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.hidden_field :game_id, :value => @game.id %>
+          <%= f.submit 'Submit', class: 'submit_btn' %>
+        <% end %>
+      </div>
+      <div class="content_container">
+          <div class="comment_list_container">
+          <% @game.comments.each do |comment| %>
+            <div class="each_comment_container">
+              <div class="vote_container">
+                <%= button_to '', comment_up_path(comment), {class: 'materials-icons up'} %>
+                <p class="vote_counts"><%= comment.tally %></p>
+                <%= button_to '', comment_down_path(comment), {class: 'materials-icons down'} %>
+              </div>
 
-<div>
-  <!-- top content container -->
-  <div>
-    <!-- image container -->
-    <div>
-      <div>
-        <img src="">
-      </div>
-    </div>
-    <!-- description container -->
-    <div>
-      <div>
-        <p> <%= @game.description %> </p>
-      </div>
-    </div>
-  </div>
-  <!-- bottom half container -->
-  <div>
-    <!-- add button to add -->
-  </div>
-  <div>
-    <!-- container for comments -->
-    <div class="container">
-      <div class="comment_container">
-        <h1>Comments</h1>
-        <div class="add_comment_container">
-          <%= form_for @comment do |f| %>
-            <%= f.label :content %>
-            <%= f.text_area :content %>
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.hidden_field :game_id, :value => @game.id %>
-            <%= f.submit 'Submit', class: 'submit_btn' %>
+              <% comment_user = User.find(comment.user_id) %>
+              <div class="comment_container">
+                  <div class="comments">
+                    <%= comment.content %> ~ <%= link_to comment_user.username, user_path(comment_user) %>
+                  </div>
+              </div>
+            </div>
           <% end %>
         </div>
-
-        <div class="content_container">
-            <div class="comment_list_container">
-            <% @game.comments.each do |comment| %>
-              <div class="each_comment_container">
-                <div class="vote_container">
-                  <%= button_to '', comment_up_path(comment), {class: 'materials-icons up'} %>
-                  <p class="vote_counts"><%= comment.tally %></p>
-                  <%= button_to '', comment_down_path(comment), {class: 'materials-icons down'} %>
-                </div>
-
-                <% comment_user = User.find(comment.user_id) %>
-                <div class="comment_container">
-                    <div class="comments">
-                      <%= comment.content %> ~ <%= link_to comment_user.username, user_path(comment_user) %>
-                    </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
       </div>
     </div>
-  </div>
+</div>
+
