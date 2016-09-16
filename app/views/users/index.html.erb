@@ -1,0 +1,20 @@
+<div class="relation_container">
+  <div class="relationship_container">
+      <h1>All Users</h1>
+      <div class="content_list">
+        <ul>
+        	<% @users.each do |user| %>
+        		<li> <%= link_to user.username, user_path(user) %>
+
+        		<% if user_signed_in? && !@user.friends.include?(user) && @user != user %>
+        			<%= form_for(@relationship, url: user_relationships_path(@user)) do |f| %>
+        				<%= f.hidden_field :friend_id, :value => user.id %>
+        				<%= f.submit "Add Friend" %>
+        			<% end %>
+        		<% end %>
+
+        	<% end %> </li>
+        </ul>
+      </div>
+  </div>
+</div>
