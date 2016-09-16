@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :games
+  resources :games do
+    post "up"
+    post "down"
+  end
+
   resources :tags
   resources :comments
 

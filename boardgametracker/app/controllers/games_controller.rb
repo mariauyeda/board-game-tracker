@@ -38,6 +38,22 @@ class GamesController < ApplicationController
     # Need to pass games id to this
   end
 
+  def up
+    game = Game.find(params[:game_id])
+    game.liked_by current_user
+    game.save
+
+    redirect_to(:back)
+  end
+
+  def down
+    game = Game.find(params[:game_id])
+    game.disliked_by current_user
+    game.save
+
+    redirect_to(:back)
+  end
+
   private
   def game_params
     params.require(:games).permit(:name, :text)
