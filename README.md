@@ -29,8 +29,11 @@ License and Author Info
 Board Game Tracker is a project by Ticket to Dev
 tickettodev@gmail.com
 Ryker Reed - Initial work - Dev Bootcamp student and coding maven
+
 John Kim - Initial work - Dev Bootcamp student who will code for coffee
+
 Maria Uyeda - Initial work - Dev Bootcamp student and student of life
+
 
 Board Game Tracker is available under the MIT license. See
 LICENSE.md for more information.
