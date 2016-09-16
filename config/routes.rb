@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     post "add_game_to_user_create"
   end
 
+  resources :libraries
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'games#index'
 end
