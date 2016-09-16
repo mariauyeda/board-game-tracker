@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @game = Game.find(params[:id])
   end
 
@@ -36,6 +37,22 @@ class GamesController < ApplicationController
 
   def add_game_to_user_create
     # Need to pass games id to this
+  end
+
+  def up
+    game = Game.find(params[:game_id])
+    game.liked_by current_user
+    game.save
+
+    redirect_to(:back)
+  end
+
+  def down
+    game = Game.find(params[:game_id])
+    game.disliked_by current_user
+    game.save
+
+    redirect_to(:back)
   end
 
   private
