@@ -1,10 +1,15 @@
 class Bggapi < ApplicationRecord
   require 'httparty'
 
+  def game_description
+    p HTTParty.get('http://www.boardgamegeek.com/xmlapi2/thing?id=NNN&marketplace=1')
+  end
+
   def hotlist
     return HTTParty.get('http://www.boardgamegeek.com/xmlapi2/hot?boardgame')
   end
 
+  # Not returning search item, need to debug
   def search_title(boardgame)
     return HTTParty.get("http://www.boardgamegeek.com/xmlapi2/search?#{boardgame}")
   end
@@ -24,4 +29,6 @@ class Bggapi < ApplicationRecord
       return all_games
     end
   end
+
+
 end
