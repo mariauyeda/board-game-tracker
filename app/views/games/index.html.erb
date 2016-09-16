@@ -11,7 +11,14 @@
             <%= button_to '', game_down_path(game), {class: 'materials-icons down'} %>
           </div>
           <div class="game_content_container">
-            <%= link_to game.name, game_path(game) %>
+            <div>
+              <%= link_to game.name, game_path(game) %>
+            </div>
+            <div class="game_image_icon">
+              <%= link_to game_path(game) do %>
+                <%= image_tag game.thumbnail %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
