@@ -12,25 +12,16 @@ class Bggapi < ApplicationRecord
   def game_title
     data = HTTParty.get('http://www.boardgamegeek.com/xmlapi2/hot?boardgame')
     body = data.parsed_response
+    body.each do |key, value|
 
-    # p titles = request.map{|h| Game.new{h}}
-   # p body.items.item.thumbnail
-   body.each do |key, value|
-
-    # print "KEY1:", key, "\n"
-    # print "VALUE1:", value, "\n"
-    # p value['item']
-    # value.each do |key2, value2|
-    #   print "KEY2:", key2, "\n"
-    #   print "VALUE2:", value2, "\n"
-    # end
-
+    all_games = Array.new
     value['item'].each do |item|
       thumbnail = item['thumbnail']['value']
       name = item['name']['value']
-      p Game.new(name: name, thumbnail: "http:#{thumbnail}", description: "Hello")
-    end
+      all_games.push(Game.create(name: name, thumbnail: "http:#{thumbnail}", description: "Hello"))
 
-  end
+    end
+      return all_games
+    end
   end
 end
