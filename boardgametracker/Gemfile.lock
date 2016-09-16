@@ -43,6 +43,9 @@ GEM
       rails
     arel (7.1.2)
     bcrypt (3.1.11)
+    bgg (1.0.1)
+      httparty
+      xml-simple
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.2.1)
@@ -65,6 +68,8 @@ GEM
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -87,6 +92,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -165,6 +171,7 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    xml-simple (1.1.5)
 
 PLATFORMS
   ruby
@@ -172,9 +179,11 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
   animate-rails
+  bgg
   byebug
   coffee-rails (~> 4.2)
   devise
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
