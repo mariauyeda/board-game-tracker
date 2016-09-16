@@ -140,8 +140,9 @@ $primary-purple: #210B21;
   width: 80%;
   height: 100px;
   vertical-align: middle;
-  padding-left: 70px;
+  padding: 20px;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .submit_btn {
@@ -151,6 +152,8 @@ $primary-purple: #210B21;
   color: white;
   border-radius: 5px;
   margin: 40px;
+  position: relative;
+  left: 80%;
 }
 
 
