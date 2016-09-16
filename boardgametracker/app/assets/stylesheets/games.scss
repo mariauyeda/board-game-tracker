@@ -14,6 +14,12 @@
   display: flex;
 }
 
+.comment_list_container {
+  widows: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .vote_container {
   flex: 1;
 }
@@ -33,6 +39,19 @@
 
 .game_content_container {
   flex: 10;
+}
+
+.each_comment_container {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.comment_container {
+  flex: 10;
+}
+
+.comment p {
+  margin: 0;
 }
 
 

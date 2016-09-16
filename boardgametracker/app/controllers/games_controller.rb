@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @game = Game.find(params[:id])
   end
 

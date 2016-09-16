@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :tags
-  resources :comments
+  resources :comments do
+    post "up"
+    post "down"
+  end
 
   resources :users do
     resources :relationships

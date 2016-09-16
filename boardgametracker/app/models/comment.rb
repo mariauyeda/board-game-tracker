@@ -3,4 +3,8 @@ class Comment < ApplicationRecord
 
 	belongs_to :user
 	belongs_to :game
+
+  def tally
+    self.get_likes.size - self.get_dislikes.size
+  end
 end
