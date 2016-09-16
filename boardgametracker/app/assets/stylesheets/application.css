@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  font-family: 'Baloo Tamma', cursive;
+  background: url(/assets/background.jpeg) no-repeat center center fixed;
+}
+
+.navigation {
+  width: 100%;
+  background-color: #C94316;
+  margin: 0;
+  padding: 0;
+  height: 80px;
+  position: fixed;
+  top: 0;
+}
+
+.navigation a {
+    color: #FFFFFF;
+    text-decoration: none;
+    float: right;
+    margin: 20px;
+}
+
+.logo img {
+  width:30px;
+  height:auto;
+  margin: 10px;
+  margin-left: 20px;
+  -webkit-filter: invert(100%);
+}
+
+.logo a {
+  margin: 5px;
+  margin-left: 20px;
+  float: left;
+}
+

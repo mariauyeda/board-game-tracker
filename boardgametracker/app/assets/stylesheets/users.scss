@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-teal: #8FC79B;
+$pirmary-brown: #C99516;
+$primary-orange: #C94316;
+$primary-red: #C91616;
+$primary-purple: #210B21;
+
+
+.user_container {
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 15%;
+  padding: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+
