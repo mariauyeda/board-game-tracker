@@ -27,6 +27,7 @@ body {
   padding: 0;
   height: 80px;
   position: fixed;
+  top: 0;
 }
 
 .navigation a {

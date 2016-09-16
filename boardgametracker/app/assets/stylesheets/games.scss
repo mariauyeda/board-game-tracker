@@ -9,34 +9,47 @@ $primary-red: #C91616;
 $primary-purple: #210B21;
 
 .title {
+  margin-top: 10%;
   text-align: center;
   color: white;
+  text-shadow: 2px 2px $primary-orange;
 }
 
 .list_title {
   text-align: center;
   color: white;
+  text-shadow: 2px 2px $primary-orange;
 }
 
 .container {
   width: 50%;
   margin: 0 auto;
-  background-color: white;
+  background-color: $primary-orange;
   border: 5px;
   border-style: dotted;
   border-color: $primary-orange;
   margin-bottom: 5%;
-  padding: 3%;
+  padding: 1%;
+  border-radius: 50px;
 }
 
 .game_list_container {
-  widows: 100%;
+  border: 5px;
+  border-style: dotted;
+  border-color: $primary-orange;
+  border-radius: 50px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  // background-image: url("/assets/rails.png");
+  background-size: cover;
+  background-position: center center;
+  background-color: white;
   height: 150px;
   display: flex;
+  padding: 3%;
+  color: $primary-orange;
 }
 
 .comment_list_container {
-  widows: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -62,6 +75,10 @@ $primary-purple: #210B21;
   flex: 10;
 }
 
+.game_content_container a {
+  color: $primary-red;
+}
+
 .each_comment_container {
   display: flex;
   padding-bottom: 20px;
@@ -69,11 +86,71 @@ $primary-purple: #210B21;
 
 .comment_container {
   flex: 10;
+  border-radius: 10px;
 }
 
 .comment p {
   margin: 0;
 }
 
+.up {
+  background:none;
+  background-image: url("/assets/up.png");
+  font-size:1em;
+  color:blue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 0;
+  width: 34px;
+  height: 30px;
+}
+
+.down {
+  background:none;
+  background-image: url("/assets/up.png");
+  font-size:1em;
+  color:blue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 0;
+  width: 34px;
+  height: 30px;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  -moz-transform: scale(-1, -1);
+  -o-transform: scale(-1, -1);
+  -webkit-transform: scale(-1, -1);
+  transform: scale(-1, -1);
+}
+
+.comment_container {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 0 15px 15px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11);
+  margin-bottom: 20px;
+}
+
+#comment_content {
+  width: 80%;
+  height: 100px;
+  vertical-align: middle;
+  padding-left: 70px;
+  border-radius: 10px;
+}
+
+.submit_btn {
+  border: none;
+  background: none;
+  background-color: $primary-teal;
+  color: white;
+  border-radius: 5px;
+  margin: 40px;
+}
 
 
