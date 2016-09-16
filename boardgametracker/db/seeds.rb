@@ -21,15 +21,19 @@ User.create(user4)
 User.create(user5)
 User.create(user6)
 
-game1 = {:name => "clue", :description => "mr. green with the wrench in the library"}
-game2 = {:name => "monopoly", :description => "buying boardwalk!"}
-game3 = {:name => "settlers of catan", :description => "trade sheep for wood?"}
-game4 = {:name => "ticket to ride", :description => "rainbow train!!"}
+new_games = Bggapi.create
+new_games.game_title
 
-Game.create(game1)
-Game.create(game2)
-Game.create(game3)
-Game.create(game4)
+
+# game1 = {:name => "clue", :description => "mr. green with the wrench in the library"}
+# game2 = {:name => "monopoly", :description => "buying boardwalk!"}
+# game3 = {:name => "settlers of catan", :description => "trade sheep for wood?"}
+# game4 = {:name => "ticket to ride", :description => "rainbow train!!"}
+
+# Game.create(game1)
+# Game.create(game2)
+# Game.create(game3)
+# Game.create(game4)
 
 tag1 = {:name => "resource gathering"}
 tag2 = {:name => "friendship-destroying"}

@@ -25,6 +25,11 @@ gem "animate-rails"
 # material design
 gem 'material_icons'
 
+gem 'httparty'
+
+# api for board game geek
+gem 'bgg'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
