@@ -1,22 +1,24 @@
-<h1> <%= @user.username %> </h1>
-<div>
-  <!-- user games list container -->
+<div id="user-profile-page">
+  <h1> <%= @user.username %> </h1>
   <div>
-    <ul>
-      <% @user.games.each do |game| %>
-        <li> <%= link_to game.name, game_path(game) %> </li>
-      <% end %>
-    </ul>
+    <!-- user games list container -->
+    <div>
+      <ul>
+        <% @user.games.each do |game| %>
+          <li> <%= link_to game.name, game_path(game) %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <div>
+      <!-- add here -->
+    </div>
+    <div>
+      <!-- delete game here -->
+    </div>
+    <% if user_signed_in? && @user == current_user %>
+    <div>
+      <%= link_to "Friends", user_relationships_path(@user) %>
+    </div>
+    <% end %>
   </div>
-  <div>
-    <!-- add here -->
-  </div>
-  <div>
-    <!-- delete game here -->
-  </div>
-  <% if user_signed_in? && @user == current_user %>
-  <div>
-    <%= link_to "Friends", user_relationships_path(@user) %>
-  </div>
-  <% end %>
 </div>
