@@ -1,0 +1,31 @@
+<div>
+  <% @games.each do |game| %>
+  	<div class="container">
+      <div class="game_list_container">
+        <div class="vote_container">
+          <%= button_to '', game_up_path(game), {class: 'materials-icons up'} %>
+          <p class="vote_counts"><%= game.tally %></p>
+          <%= button_to '', game_down_path(game), {class: 'materials-icons down'} %>
+        </div>
+        <div class="game_content_container">
+          <div>
+            <%= link_to game.name, game_path(game) %>
+          </div>
+          <div class="game_image_icon">
+            <%= link_to game_path(game) do %>
+              <%= image_tag game.thumbnail %>
+            <% end %>
+          </div>
+        </div>
+
+        <% if user_signed_in? && !current_user.games.include?(game) %>
+          <%= form_for(@library, url: libraries_path) do |f| %>
+            <%= f.hidden_field :game_id, :value => game.id %>
+            <%= f.submit "Add Game" %>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
