@@ -17,7 +17,7 @@
 body {
   margin: 0;
   font-family: 'Baloo Tamma', cursive;
-  background: url(/assets/background.jpeg) no-repeat center center fixed;
+  background-color: #8e2f0f;
 }
 
 .navigation {

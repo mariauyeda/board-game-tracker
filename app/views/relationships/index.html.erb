@@ -1,13 +1,17 @@
-<h1> <%= @user.username %>'s Friends </h1>
+<div class="relation_container">
+  <div class="relationship_container">
+    <h1> <%= @user.username %>'s Friends </h1>
 
-<div>
-  <!-- relationships container -->
-  <div>
-    <ul>
-    	<% @friends.each do |friend| %>
-    	<% friend_user = User.find(friend.id) %>
-    	<li> <%= link_to friend_user.username, user_path(friend_user) %> </li>
-    	<% end %>
-    </ul>
+    <div>
+      <!-- relationships container -->
+      <div class="content_list">
+        <ul>
+        	<% @friends.each do |friend| %>
+        	<% friend_user = User.find(friend.id) %>
+        	<li> <%= link_to friend_user.username, user_path(friend_user) %> </li>
+        	<% end %>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
